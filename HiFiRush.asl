@@ -14,7 +14,7 @@ state("Hi-Fi-RUSH", "XboxGP v1.0")
 
 state("Hi-Fi-RUSH", "Steam v1.0")
 {
-    bool loading : 0x6FEE2C8;
+    bool loading : 0x6CDCF70;
 }
 
 init
