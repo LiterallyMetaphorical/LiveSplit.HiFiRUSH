@@ -1,3 +1,5 @@
+//Thanks to Candle for helping with the Steam addresses!
+
 /*
 Scanning Best Practices:
 
@@ -10,12 +12,20 @@ state("Hi-Fi-RUSH", "XboxGP v1.0")
     bool loading : 0x6FB800C;
 }
 
+state("Hi-Fi-RUSH", "Steam v1.0")
+{
+    bool loading : 0x6FEE2C8;
+}
+
 init
 {
 switch (modules.First().ModuleMemorySize) 
     {
         case 387805184: 
             version = "XboxGP v1.0";
+            break;
+        case 401436672: 
+            version = "Steam v1.0";
             break;
     default:
         print("Unknown version detected");
