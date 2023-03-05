@@ -1,4 +1,4 @@
-//Thanks to Candle for helping with the Steam addresses!
+//Thanks to Candle and Vorime for helping with the addresses!
 
 /*
 Scanning Best Practices:
@@ -27,6 +27,11 @@ state("Hi-Fi-RUSH", "Steam v1.1")
     bool loading : 0x6CF1BE4;
 }
 
+state("Hi-Fi-RUSH", "XboxGP v1.2")
+{
+    bool loading : 0x6D0FAB4;
+}
+
 state("Hi-Fi-RUSH", "Steam v1.2")
 {
     bool loading : 0x6D6A1A4;
@@ -47,6 +52,9 @@ switch (modules.First().ModuleMemorySize)
             break;
         case 407990272: 
             version = "Steam v1.1";
+            break;
+	case 402980864: 
+            version = "XboxGP v1.2";
             break;
 	case 410542080:
             version = "Steam v1.2";
