@@ -47,6 +47,11 @@ state("Hi-Fi-RUSH", "Steam v1.3")
     bool loading : 0x71004CC;
 }
 
+state("Hi-Fi-RUSH", "Steam v1.4")
+{
+    bool loading : 0x70B650C;
+}
+
 init
 {
 switch (modules.First().ModuleMemorySize) 
@@ -74,6 +79,9 @@ switch (modules.First().ModuleMemorySize)
             break; 
 	case 411308032:
             version = "Steam v1.3";
+            break;
+	case 416612352:
+            version = "Steam v1.4";
             break; 
         default:
         print("Unknown version detected");
