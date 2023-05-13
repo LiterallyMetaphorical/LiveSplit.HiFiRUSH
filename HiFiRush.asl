@@ -47,6 +47,11 @@ state("Hi-Fi-RUSH", "Steam v1.3")
     bool loading : 0x71004CC;
 }
 
+state("Hi-Fi-RUSH", "XboxGP v1.4")
+{
+    bool loading : 0x70471CC;
+}
+
 state("Hi-Fi-RUSH", "Steam v1.4")
 {
     bool loading : 0x70B650C;
@@ -79,6 +84,9 @@ switch (modules.First().ModuleMemorySize)
             break; 
 	case 411308032:
             version = "Steam v1.3";
+            break;
+	case 395321344: 
+            version = "XboxGP v1.4";
             break;
 	case 416612352:
             version = "Steam v1.4";
