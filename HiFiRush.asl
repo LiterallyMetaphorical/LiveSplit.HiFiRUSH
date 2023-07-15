@@ -57,6 +57,11 @@ state("Hi-Fi-RUSH", "Steam v1.4")
     bool loading : 0x70B650C;
 }
 
+state("Hi-Fi-RUSH", "Steam v1.5")
+{
+    bool loading : 0x6F12774;
+}
+
 init
 {
 switch (modules.First().ModuleMemorySize) 
