@@ -1,4 +1,4 @@
-//Thanks to Candle, Vorime and AFSilver for helping with the addresses!
+//Thanks to Candle, Vorime, AFSilver and Perodi for helping with the addresses!
 
 /*
 Scanning Best Practices:
