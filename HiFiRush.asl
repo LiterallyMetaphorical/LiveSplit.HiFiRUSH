@@ -66,7 +66,7 @@ state("Hi-Fi-RUSH", "Steam v1.5")
 {
     bool loading : 0x6F12774;
 }
-state("Hi-Fi-RUSH", "Steam v1.7")
+state("Hi-Fi-RUSH", "Steam v1.6")
 {
     bool loading : 0x72644A0;
 }
@@ -109,7 +109,7 @@ switch (modules.First().ModuleMemorySize)
             version = "XboxGP v1.6";
             break;
 	case 415465472: 
-            version = "XboxGP v1.7";
+            version = "Steam v1.6";
             break;
         default:
         print("Unknown version detected");
