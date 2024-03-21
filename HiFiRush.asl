@@ -1,4 +1,4 @@
-//Thanks to Candle, Vorime, AFSilver and Perodi for helping with the addresses!
+//Thanks to Candle, Vorime, AFSilver, Perodi and BoltClock for helping with the addresses!
 
 /*
 Scanning Best Practices:
@@ -66,70 +66,80 @@ state("Hi-Fi-RUSH", "Steam v1.5")
 {
     bool loading : 0x6F12774;
 }
+
 state("Hi-Fi-RUSH", "Steam v1.6")
 {
     bool loading : 0x72644A0;
 }
+
 state("Hi-Fi-RUSH", "Steam v1.7")
 {
     bool loading : 0x728C9B8;
 }
 
+state("Hi-Fi-RUSH", "Steam v1.8")
+{
+    bool loading : 0x72919F8;
+}
+
 
 init
 {
-switch (modules.First().ModuleMemorySize) 
+    switch (modules.First().ModuleMemorySize)
     {
-        case 387805184: 
+        case 387805184:
             version = "XboxGP v1.0";
             break;
-        case 401436672: 
+        case 401436672:
             version = "Steam v1.0";
             break;
-        case 399798272: 
+        case 399798272:
             version = "XboxGP v1.1";
             break;
-        case 407990272: 
+        case 407990272:
             version = "Steam v1.1";
             break;
-	case 402980864: 
+        case 402980864:
             version = "XboxGP v1.2";
             break;
-	case 410542080:
+        case 410542080:
             version = "Steam v1.2";
             break;
-	case 394354688: 
+        case 394354688:
             version = "XboxGP v1.3";
-            break; 
-	case 411308032:
+            break;
+        case 411308032:
             version = "Steam v1.3";
             break;
-	case 395321344: 
+        case 395321344:
             version = "XboxGP v1.4";
             break;
-	case 416612352:
+        case 416612352:
             version = "Steam v1.4";
             break;
-	case 404189184: 
+        case 404189184:
             version = "XboxGP v1.6";
             break;
-	case 415465472: 
+        case 415465472:
             version = "Steam v1.6";
             break;
-	case 410689536: 
+        case 410689536:
             version = "Steam v1.7";
             break;
+        case 411860992:
+            version = "Steam v1.8";
+            break;
         default:
-        print("Unknown version detected");
-        return false;
+            print("Unknown version detected");
+            return false;
     }
 }
 
 startup
-  {
-		if (timer.CurrentTimingMethod == TimingMethod.RealTime)
-// Asks user to change to game time if LiveSplit is currently set to Real Time.
-    {        
+{
+    // Asks user to change to game time if LiveSplit is currently set to Real Time.
+    if (timer.CurrentTimingMethod == TimingMethod.RealTime)
+    {
         var timingMessage = MessageBox.Show (
             "This game uses Time without Loads (Game Time) as the main timing method.\n"+
             "LiveSplit is currently set to show Real Time (RTA).\n"+
@@ -153,9 +163,9 @@ onStart
 
 update
 {
-//DEBUG CODE 
+//DEBUG CODE
 //print(modules.First().ModuleMemorySize.ToString());
-//print(current.loading.ToString()); 
+//print(current.loading.ToString());
 }
 
 
@@ -167,5 +177,5 @@ isLoading
 exit
 {
     //pauses timer if the game crashes
-	timer.IsGameTimePaused = true;
+    timer.IsGameTimePaused = true;
 }
