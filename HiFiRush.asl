@@ -82,6 +82,11 @@ state("Hi-Fi-RUSH", "Steam v1.8")
     bool loading : 0x72919F8;
 }
 
+state("Hi-Fi-RUSH", "Steam v1.9")
+{
+    bool loading : 0x728CA80;
+}
+
 
 init
 {
@@ -128,6 +133,9 @@ init
             break;
         case 411860992:
             version = "Steam v1.8";
+            break;
+        case 413134848:
+            version = "Steam v1.9";
             break;
         default:
             print("Unknown version detected");
